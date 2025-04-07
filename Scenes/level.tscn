@@ -5,13 +5,17 @@
 
 [node name="Level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
+texture_repeat = 2
 texture = ExtResource("1_xjmqx")
+region_enabled = true
+region_rect = Rect2(-21961.4, -12187.8, 47357.4, 24911.3)
 
 [node name="Player" parent="." instance=ExtResource("1_frw4y")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

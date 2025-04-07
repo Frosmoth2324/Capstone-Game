@@ -1,18 +1,71 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6u6lt7xce26a"]
+[gd_scene load_steps=8 format=3 uid="uid://c6u6lt7xce26a"]
 
 [ext_resource type="Texture2D" uid="uid://se8g2ptfsvym" path="res://icon.svg" id="1_2urpm"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_t0qeu"]
+[ext_resource type="Texture2D" uid="uid://b134fmlltmnew" path="res://Assets/circle.png" id="3_f88wp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xh18n"]
 radius = 83.0241
 
-[sub_resource type="Gradient" id="Gradient_vvlts"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="Animation" id="Animation_0p5ra"]
+resource_name = "flame_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_i21bq"]
-gradient = SubResource("Gradient_vvlts")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="Animation" id="Animation_kkajj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6b4l"]
+_data = {
+"RESET": SubResource("Animation_kkajj"),
+"flame_out": SubResource("Animation_0p5ra")
+}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t0qeu")
@@ -24,13 +77,18 @@ texture = ExtResource("1_2urpm")
 shape = SubResource("CircleShape2D_xh18n")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(2, 2)
 color = Color(0.690989, 0.352422, 3.85046e-07, 1)
 energy = 3.0
 blend_mode = 2
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_i21bq")
+texture = ExtResource("3_f88wp")
 
 [node name="OilTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t6b4l")
+}
 
 [connection signal="timeout" from="OilTimer" to="." method="_on_oil_timer_timeout"]

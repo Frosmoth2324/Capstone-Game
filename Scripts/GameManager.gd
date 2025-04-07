@@ -1,11 +1,10 @@
 extends Node
 
+var oil = 15
+var dead = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(_delta):
+	print(oil)
+	if dead == true and oil != -1000:
+		get_tree().change_scene_to_file("res://Scenes/die_screen.tscn")
+		oil = -1000

@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
 
-const SPEED = 8000
+const SPEED = 12500
 @onready var sprite_2d = $Sprite2D
 @onready var light = $PointLight2D
 @onready var oil_timer = $OilTimer
-
-var oil = 15
+@onready var animation_player = $AnimationPlayer
 
 func _ready():
 	oil_timer.start()
@@ -23,11 +22,14 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 	move_and_slide()
 
+func _process(_delta):
+	if light.enabled == false:
+		GameManager.dead = true
+
 
 func _on_oil_timer_timeout():
-	oil -= 1
-	print(oil)
-	if oil > 0:
+	if GameManager.oil > 0:
+		GameManager.oil -= 1
 		oil_timer.start()
-	else:
-		light.enabled = false
+	elif GameManager.oil == 0:
+		animation_player.play("flame_out")
