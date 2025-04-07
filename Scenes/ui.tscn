@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://l3sbtgxku847"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_v6tqu"]
+[ext_resource type="Texture2D" uid="uid://se8g2ptfsvym" path="res://icon.svg" id="2_32l27"]
+[ext_resource type="Texture2D" uid="uid://byr0yxt3oxsf4" path="res://Assets/progress.png" id="2_p3yau"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_v6tqu")
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.0173611
+anchor_top = 0.0277778
+anchor_right = 0.0520833
+anchor_bottom = 0.0895062
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -2.0
+offset_right = 149.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/HBoxContainer"]
+modulate = Color(0.690196, 0.352941, 0, 1)
+position = Vector2(-18, 14)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_32l27")
+
+[node name="OilBar" type="TextureProgressBar" parent="UI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 15.0
+value = 15.0
+texture_progress = ExtResource("2_p3yau")
