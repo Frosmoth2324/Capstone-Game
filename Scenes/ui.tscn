@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://l3sbtgxku847"]
+[gd_scene load_steps=6 format=3 uid="uid://l3sbtgxku847"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_v6tqu"]
 [ext_resource type="Texture2D" uid="uid://se8g2ptfsvym" path="res://icon.svg" id="2_32l27"]
-[ext_resource type="Texture2D" uid="uid://byr0yxt3oxsf4" path="res://Assets/progress.png" id="2_p3yau"]
+[ext_resource type="Texture2D" uid="uid://d02ocjbjgift3" path="res://Assets/oil_progress.png" id="3_amtcq"]
+[ext_resource type="Texture2D" uid="uid://biaos0qt8fum7" path="res://Assets/heart.png" id="4_puw16"]
+[ext_resource type="Texture2D" uid="uid://cahir0xigdglw" path="res://Assets/health_progress.png" id="5_nj8n0"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_v6tqu")
@@ -25,17 +27,29 @@ offset_right = 149.0
 offset_bottom = 38.0
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+[node name="Health" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/HBoxContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/Health"]
+position = Vector2(-19.3333, 14)
+texture = ExtResource("4_puw16")
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/VBoxContainer/Health"]
+layout_mode = 2
+value = 100.0
+texture_progress = ExtResource("5_nj8n0")
+
+[node name="Oil" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/Oil"]
 modulate = Color(0.690196, 0.352941, 0, 1)
 position = Vector2(-18, 14)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_32l27")
 
-[node name="OilBar" type="TextureProgressBar" parent="UI/VBoxContainer/HBoxContainer"]
+[node name="OilBar" type="TextureProgressBar" parent="UI/VBoxContainer/Oil"]
 layout_mode = 2
 max_value = 15.0
 value = 15.0
-texture_progress = ExtResource("2_p3yau")
+texture_progress = ExtResource("3_amtcq")
