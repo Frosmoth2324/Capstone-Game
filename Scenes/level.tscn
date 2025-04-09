@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://crvr4t64khjk6"]
+[gd_scene load_steps=6 format=3 uid="uid://crvr4t64khjk6"]
 
 [ext_resource type="PackedScene" uid="uid://c6u6lt7xce26a" path="res://Scenes/player.tscn" id="1_frw4y"]
 [ext_resource type="Texture2D" uid="uid://bi0veih7vkgj2" path="res://Assets/Dungeon_brick_wall_grey.png.png" id="1_xjmqx"]
 [ext_resource type="PackedScene" uid="uid://l3sbtgxku847" path="res://Scenes/ui.tscn" id="3_juxmo"]
+[ext_resource type="PackedScene" uid="uid://clkp8fyws0hxj" path="res://Scenes/oil.tscn" id="4_tt366"]
+[ext_resource type="PackedScene" uid="uid://cg3nd41s213fe" path="res://Scenes/enemy.tscn" id="5_bnj4o"]
 
 [node name="Level" type="Node2D"]
 
@@ -24,3 +26,9 @@ position_smoothing_enabled = true
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="UI" parent="." instance=ExtResource("3_juxmo")]
+
+[node name="Oil" parent="." instance=ExtResource("4_tt366")]
+position = Vector2(402, 324)
+
+[node name="Enemy" parent="." instance=ExtResource("5_bnj4o")]
+position = Vector2(648, 24)

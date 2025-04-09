@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-
-const SPEED = 12500
 @onready var sprite_2d = $Sprite2D
 @onready var light = $PointLight2D
 @onready var oil_timer = $OilTimer
 @onready var animation_player = $AnimationPlayer
 @onready var hit_sound = $HitSound
+
+const SPEED = 12500
 
 func _ready():
 	oil_timer.start()
@@ -30,6 +30,12 @@ func _physics_process(delta):
 func _process(_delta):
 	if light.enabled == false:
 		GameManager.dead = true
+	if GameManager.oil > 5:
+		light.scale = Vector2(2, 2)
+	elif GameManager.oil <= 5:
+		light.scale = (2.0/5.0) * Vector2(GameManager.oil, GameManager.oil)
+	if GameManager.health <= 0:
+		animation_player.play("flame_out")
 
 
 func _on_oil_timer_timeout():
@@ -39,6 +45,9 @@ func _on_oil_timer_timeout():
 	elif GameManager.oil == 0:
 		animation_player.play("flame_out")
 
-func hit(damage):
-	hit_sound.playing = true
-	GameManager.health -= damage
+func hit(hurt):
+	hit_sound.play()
+	GameManager.health -= hurt
+
+func is_player():
+	print("sup dude")
