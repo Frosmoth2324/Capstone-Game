@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://clkp8fyws0hxj"]
+
+[ext_resource type="AudioStream" uid="uid://by5u8u7016rmw" path="res://oilRefill.mp3" id="1_ragfu"]
+
+[sub_resource type="Gradient" id="Gradient_w7edu"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4je6r"]
+gradient = SubResource("Gradient_w7edu")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpcby"]
+radius = 58.0775
+
+[node name="Oil" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499999, 0.499996)
+scale = Vector2(0.222656, 61)
+texture = SubResource("GradientTexture1D_4je6r")
+
+[node name="OilSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ragfu")
+max_polyphony = 5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dpcby")

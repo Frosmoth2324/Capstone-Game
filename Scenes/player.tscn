@@ -1,8 +1,60 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6u6lt7xce26a"]
+[gd_scene load_steps=14 format=3 uid="uid://c6u6lt7xce26a"]
 
-[ext_resource type="Texture2D" uid="uid://se8g2ptfsvym" path="res://icon.svg" id="1_2urpm"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_t0qeu"]
+[ext_resource type="Texture2D" uid="uid://bnvym4b241x4e" path="res://player.png" id="2_xx4bp"]
 [ext_resource type="Texture2D" uid="uid://b134fmlltmnew" path="res://Assets/circle.png" id="3_f88wp"]
+[ext_resource type="AudioStream" uid="uid://gqogr222nilp" path="res://playerHit.mp3" id="4_cudna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35h2m"]
+atlas = ExtResource("2_xx4bp")
+region = Rect2(47, 0, 238, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23jmn"]
+atlas = ExtResource("2_xx4bp")
+region = Rect2(285, 500, 238, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tusfm"]
+atlas = ExtResource("2_xx4bp")
+region = Rect2(285, 0, 238, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o1iy"]
+atlas = ExtResource("2_xx4bp")
+region = Rect2(47, 500, 238, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avoh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35h2m")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23jmn")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tusfm")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o1iy")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xh18n"]
 radius = 83.0241
@@ -70,8 +122,11 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t0qeu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2urpm")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_avoh7")
+animation = &"up"
+autoplay = "down"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xh18n")
@@ -90,5 +145,9 @@ texture = ExtResource("3_f88wp")
 libraries = {
 "": SubResource("AnimationLibrary_t6b4l")
 }
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cudna")
+max_polyphony = 50
 
 [connection signal="timeout" from="OilTimer" to="." method="_on_oil_timer_timeout"]
