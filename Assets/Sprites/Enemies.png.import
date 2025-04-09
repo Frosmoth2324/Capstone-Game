@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi0veih7vkgj2"
-path="res://.godot/imported/Dungeon_brick_wall_grey.png.png-2a9f9504a29624afbdbf4e42fdf3783d.ctex"
+uid="uid://bkmfg36l1lrxf"
+path="res://.godot/imported/Enemies.png-2a064d64f90c3e6cde233a1cd02e0224.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon_brick_wall_grey.png.png"
-dest_files=["res://.godot/imported/Dungeon_brick_wall_grey.png.png-2a9f9504a29624afbdbf4e42fdf3783d.ctex"]
+source_file="res://Assets/Sprites/Enemies.png"
+dest_files=["res://.godot/imported/Enemies.png-2a064d64f90c3e6cde233a1cd02e0224.ctex"]
 
 [params]
 

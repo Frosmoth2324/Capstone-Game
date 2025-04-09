@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3rnfo4ptynsw"
-path="res://.godot/imported/idle sheet-Sheet.png-0c1647a9b93a5984bd99fec3dc45205c.ctex"
+uid="uid://bi0veih7vkgj2"
+path="res://.godot/imported/Dungeon_brick_wall_grey.png.png-a992bc24fdfd6745d2324a61f25ca6e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/idle sheet-Sheet.png"
-dest_files=["res://.godot/imported/idle sheet-Sheet.png-0c1647a9b93a5984bd99fec3dc45205c.ctex"]
+source_file="res://Assets/Sprites/Dungeon_brick_wall_grey.png.png"
+dest_files=["res://.godot/imported/Dungeon_brick_wall_grey.png.png-a992bc24fdfd6745d2324a61f25ca6e3.ctex"]
 
 [params]
 

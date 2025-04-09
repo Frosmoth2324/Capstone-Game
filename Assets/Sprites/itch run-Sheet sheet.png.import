@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d02ocjbjgift3"
-path="res://.godot/imported/oil_progress.png-bd3ae3b39ef5280ce98b1e490364e800.ctex"
+uid="uid://b2v43dg38kynj"
+path="res://.godot/imported/itch run-Sheet sheet.png-1964ac80532fdb3edb5e90aa36863c50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/oil_progress.png"
-dest_files=["res://.godot/imported/oil_progress.png-bd3ae3b39ef5280ce98b1e490364e800.ctex"]
+source_file="res://Assets/Sprites/itch run-Sheet sheet.png"
+dest_files=["res://.godot/imported/itch run-Sheet sheet.png-1964ac80532fdb3edb5e90aa36863c50.ctex"]
 
 [params]
 

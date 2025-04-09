@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2v43dg38kynj"
-path="res://.godot/imported/itch run-Sheet sheet.png-26a391e9fd2e53905321da36e67e719b.ctex"
+uid="uid://b134fmlltmnew"
+path="res://.godot/imported/circle.png-99e8ae404c58d1fa29141ddc6ad9b742.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/itch run-Sheet sheet.png"
-dest_files=["res://.godot/imported/itch run-Sheet sheet.png-26a391e9fd2e53905321da36e67e719b.ctex"]
+source_file="res://Assets/Sprites/circle.png"
+dest_files=["res://.godot/imported/circle.png-99e8ae404c58d1fa29141ddc6ad9b742.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cahir0xigdglw"
-path="res://.godot/imported/health_progress.png-81ad312e6b4b9688fdc7b01e8b75293e.ctex"
+uid="uid://c2a8fl4dk6yfh"
+path="res://.godot/imported/oil_bottle.png-3a2248600dc085dc9a94a16651936b7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/health_progress.png"
-dest_files=["res://.godot/imported/health_progress.png-81ad312e6b4b9688fdc7b01e8b75293e.ctex"]
+source_file="res://Assets/Sprites/oil_bottle.png"
+dest_files=["res://.godot/imported/oil_bottle.png-3a2248600dc085dc9a94a16651936b7c.ctex"]
 
 [params]
 

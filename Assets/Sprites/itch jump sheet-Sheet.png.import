@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2a8fl4dk6yfh"
-path="res://.godot/imported/oil_bottle.png-05718d7d366b7ff93c51eb8cb88da928.ctex"
+uid="uid://crystrwpm2nmc"
+path="res://.godot/imported/itch jump sheet-Sheet.png-b5c3e0465bb5dbba20110775331afab3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/oil_bottle.png"
-dest_files=["res://.godot/imported/oil_bottle.png-05718d7d366b7ff93c51eb8cb88da928.ctex"]
+source_file="res://Assets/Sprites/itch jump sheet-Sheet.png"
+dest_files=["res://.godot/imported/itch jump sheet-Sheet.png-b5c3e0465bb5dbba20110775331afab3.ctex"]
 
 [params]
 

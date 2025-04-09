@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://clkp8fyws0hxj"]
 
-[ext_resource type="Texture2D" uid="uid://c2a8fl4dk6yfh" path="res://Assets/oil_bottle.png" id="1_6ropb"]
+[ext_resource type="Texture2D" uid="uid://c2a8fl4dk6yfh" path="res://Assets/Sprites/oil_bottle.png" id="1_6ropb"]
 [ext_resource type="Script" path="res://Scripts/oil.gd" id="1_qdpxf"]
-[ext_resource type="AudioStream" uid="uid://by5u8u7016rmw" path="res://Assets/oilRefill.mp3" id="1_ragfu"]
+[ext_resource type="AudioStream" uid="uid://by5u8u7016rmw" path="res://Assets/Sounds/oilRefill.mp3" id="1_ragfu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dpcby"]
 radius = 77.026
