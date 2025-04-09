@@ -156,11 +156,12 @@ max_polyphony = 50
 [node name="Pulses" type="Node" parent="."]
 
 [node name="ConeTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 
 [node name="ConeLight" type="PointLight2D" parent="."]
 position = Vector2(0, 600)
 scale = Vector2(6, 24)
+color = Color(1, 0.6, 0.4, 1)
 shadow_enabled = true
 texture = ExtResource("5_7nsk8")
 

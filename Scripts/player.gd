@@ -45,13 +45,16 @@ func handle_cone():
 		else:
 			if GameManager.can_cone:
 				GameManager.is_coneing = true
-		GameManager.is_cone_boosting = (GameManager.is_coneing and Input.is_action_pressed("Cone Boost"))
 	cone_light.enabled = GameManager.is_coneing
 	if GameManager.is_coneing and cone_timer.is_stopped():
 		cone_timer.start()
-		
-	
-	
+	GameManager.is_cone_boosting = (GameManager.is_coneing and Input.is_action_pressed("Cone Boost", true))
+	if GameManager.is_coneing and !GameManager.is_cone_boosting:
+		cone_light.color = Color(1.0, 0.5, 0.0, 1.0)
+	elif GameManager.is_coneing and GameManager.is_cone_boosting:
+		print("boost")
+		cone_light.color = Color(1.0, .8, 0.4, 1.0)
+
 func set_sprite_direction(direction):
 	if direction.x > 0:
 		sprite_2d.play("right")

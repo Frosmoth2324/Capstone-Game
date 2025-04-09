@@ -15,10 +15,5 @@ func _ready():
 func _process(_delta):
 	oil_bar.value = GameManager.oil
 	health_bar.value = GameManager.health
-	oil_number.text = str(GameManager.oil)
-	health_number.text = str(GameManager.health)
-	if GameManager.oil > GameManager.MAX_OIL:
-		pass
-	else:
-		pass
-	
+	oil_number.text = str(int(GameManager.oil))
+	health_number.text = str(int(GameManager.health))

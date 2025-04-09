@@ -11,11 +11,11 @@ var oil_can = 10
 #cone
 var can_cone = true
 var is_coneing = false
-var cone_cost = 1
+var cone_cost = .5
 var cone_damage = 1
 #boost
 var is_cone_boosting = false
-var cone_boost_cost = 3
+var cone_boost_cost = 1
 var cone_boost_damage = 2
 
 #pulse
@@ -24,6 +24,8 @@ var pulse_cost = 30
 var pulse_damage = 10
 
 func _process(_delta):
+	if oil < 0:
+		dead = true
 	if dead == true and oil != -1000:
 		get_tree().change_scene_to_file("res://Scenes/die_screen.tscn")
 		oil = -1000
