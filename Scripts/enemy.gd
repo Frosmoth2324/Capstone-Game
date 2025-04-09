@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var SPEED = 100
 var health = 10
-var damage = 50
+var damage = 10
 
 
 func _ready():
@@ -33,8 +33,12 @@ func _physics_process(delta):
 
 func hit(hurt):
 	health -= hurt
+	print("enemy hit")
+	if health <= 0:
+		print("die")
+		queue_free()
 
 
 func _on_area_2d_body_entered(body):
-	if body.has_method("hit"):
-		body.hit(damage)
+	if body.has_method("hit") and body.has_method("is_player"):
+			body.hit(damage)

@@ -151,4 +151,7 @@ libraries = {
 stream = ExtResource("4_cudna")
 max_polyphony = 50
 
+[node name="Pulses" type="Node" parent="."]
+
+[connection signal="lantern_pulse" from="." to="." method="_on_lantern_pulse"]
 [connection signal="timeout" from="OilTimer" to="." method="_on_oil_timer_timeout"]
