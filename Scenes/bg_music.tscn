@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck8xph2bfkmuu"]
 
-[ext_resource type="AudioStream" uid="uid://svt0uokumnk0" path="res://Assets/Lonely Horizon.mp3" id="1_fgn4j"]
+[ext_resource type="AudioStream" uid="uid://svt0uokumnk0" path="res://Assets/Sounds/Lonely Horizon.mp3" id="1_fgn4j"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_fgn4j")

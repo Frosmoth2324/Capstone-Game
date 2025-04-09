@@ -1,7 +1,6 @@
 extends Area2D
 
-var damage: int = 5
-var pulse_radius: float = 100.0
+var damage = GameManager.pulse_damage
 var lifetime: float = 0.3
 
 @onready var collision_shape_2d = $CollisionShape2D
@@ -9,8 +8,7 @@ var lifetime: float = 0.3
 
 func _ready():
 	if GameManager.oil >= 5:
-		GameManager.oil -= 2
-	collision_shape_2d.shape.radius = pulse_radius
+		GameManager.oil -= GameManager.pulse_cost
 	for body in get_overlapping_bodies():
 		if body.has_method("hit"):
 			body.hit(damage)

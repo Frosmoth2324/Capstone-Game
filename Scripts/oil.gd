@@ -5,7 +5,7 @@ extends Node2D
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("is_player"):
-		GameManager.oil += 5
+		GameManager.oil += GameManager.oil_can
 		oil_sound.play()
 
 

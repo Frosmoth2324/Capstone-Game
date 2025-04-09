@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pokcuuvd2sxe" path="res://Assets/Sprites/pulsegradient.png" id="2_armro"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7rc0"]
-radius = 234.053
+radius = 457.246
 
 [node name="Pulse" type="Area2D"]
 script = ExtResource("1_6x7uc")
@@ -15,9 +15,9 @@ shape = SubResource("CircleShape2D_d7rc0")
 [node name="LifetimeTimer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.7)
+modulate = Color(1, 1, 1, 0.5)
 position = Vector2(1, 0)
-scale = Vector2(15, 15)
+scale = Vector2(30, 30)
 texture = ExtResource("2_armro")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

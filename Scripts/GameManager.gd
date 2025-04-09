@@ -1,12 +1,27 @@
 extends Node
 
-const MAX_OIL = 50
-const MAX_HEALTH = 100
+const MAX_OIL = 50.0
 var oil = MAX_OIL
+const MAX_HEALTH = 100
 var health = MAX_HEALTH
 var dead = false
+
+var oil_can = 10
+
+#cone
+var can_cone = true
+var is_coneing = false
+var cone_cost = 1
+var cone_damage = 1
+#boost
+var is_cone_boosting = false
+var cone_boost_cost = 3
+var cone_boost_damage = 2
+
+#pulse
 var can_pulse = true
-var pulse_cost = 2
+var pulse_cost = 30
+var pulse_damage = 10
 
 func _process(_delta):
 	if dead == true and oil != -1000:
@@ -16,3 +31,7 @@ func _process(_delta):
 		can_pulse = false
 	else:
 		can_pulse = true
+	if oil <= cone_cost:
+		can_cone = false
+	else:
+		can_cone = true
