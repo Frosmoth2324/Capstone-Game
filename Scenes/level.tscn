@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://crvr4t64khjk6"]
+[gd_scene load_steps=7 format=3 uid="uid://crvr4t64khjk6"]
 
 [ext_resource type="PackedScene" uid="uid://c6u6lt7xce26a" path="res://Scenes/player.tscn" id="1_frw4y"]
 [ext_resource type="Texture2D" uid="uid://bi0veih7vkgj2" path="res://Assets/Dungeon_brick_wall_grey.png.png" id="1_xjmqx"]
 [ext_resource type="PackedScene" uid="uid://l3sbtgxku847" path="res://Scenes/ui.tscn" id="3_juxmo"]
 [ext_resource type="PackedScene" uid="uid://clkp8fyws0hxj" path="res://Scenes/oil.tscn" id="4_tt366"]
 [ext_resource type="PackedScene" uid="uid://cg3nd41s213fe" path="res://Scenes/enemy.tscn" id="5_bnj4o"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4fcwg"]
+vertices = PackedVector2Array(547447, 313462, -351222, 316662, -383476, -193782, 541687, -200694)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-383487, -193792, 541697, -200704, 547457, 313472, -351231, 316672)])
 
 [node name="Level" type="Node2D"]
 
@@ -32,3 +37,6 @@ position = Vector2(402, 324)
 
 [node name="Enemy" parent="." instance=ExtResource("5_bnj4o")]
 position = Vector2(648, 24)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4fcwg")
