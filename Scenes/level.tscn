@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://crvr4t64khjk6"]
+[gd_scene load_steps=6 format=3 uid="uid://crvr4t64khjk6"]
 
 [ext_resource type="PackedScene" uid="uid://c6u6lt7xce26a" path="res://Scenes/player.tscn" id="1_frw4y"]
 [ext_resource type="Texture2D" uid="uid://bi0veih7vkgj2" path="res://Assets/Sprites/Dungeon_brick_wall_grey.png.png" id="1_xjmqx"]
@@ -6,18 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://clkp8fyws0hxj" path="res://Scenes/oil.tscn" id="4_tt366"]
 [ext_resource type="PackedScene" uid="uid://cg3nd41s213fe" path="res://Scenes/enemy.tscn" id="5_bnj4o"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_4fcwg"]
-vertices = PackedVector2Array(547447, 313462, -351222, 316662, -383476, -193782, 541687, -200694)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-383487, -193792, 541697, -200704, 547457, 313472, -351231, 316672)])
-
 [node name="Level" type="Node2D"]
 
 [node name="BG" type="Sprite2D" parent="."]
 texture_repeat = 2
 texture = ExtResource("1_xjmqx")
 region_enabled = true
-region_rect = Rect2(-21961.4, -12187.8, 47357.4, 24911.3)
+region_rect = Rect2(-90723.5, -56848.7, 169198, 96920.4)
 
 [node name="Player" parent="." instance=ExtResource("1_frw4y")]
 unique_name_in_owner = true
@@ -32,11 +27,12 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="UI" parent="." instance=ExtResource("3_juxmo")]
 
-[node name="Oil" parent="." instance=ExtResource("4_tt366")]
+[node name="Oils" type="Node" parent="."]
+
+[node name="Oil" parent="Oils" instance=ExtResource("4_tt366")]
 position = Vector2(402, 324)
 
-[node name="Enemy" parent="." instance=ExtResource("5_bnj4o")]
-position = Vector2(648, 24)
+[node name="Enemies" type="Node" parent="."]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_4fcwg")
+[node name="Enemy" parent="Enemies" instance=ExtResource("5_bnj4o")]
+position = Vector2(648, 24)
