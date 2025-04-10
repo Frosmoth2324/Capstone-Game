@@ -61,10 +61,6 @@ frame_progress = 0.394783
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_kpoii")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 visibility_layer = 2
