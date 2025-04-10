@@ -15,7 +15,7 @@ var oil_scene = preload("res://Scenes/oil.tscn")
 
 func _ready():
 	loot_num = randi_range(0,100)
-	GameManager.enemies_remaining += 1
+	WaveManager.enemies_remaining += 1
 
 func _physics_process(delta):
 		var direction = (player.global_position - global_position).normalized()
@@ -34,7 +34,7 @@ func hit(hurt):
 	if health <= 0:
 		print("die")
 		print(loot_num)
-		GameManager.enemies_remaining -= 1
+		WaveManager.enemies_remaining -= 1
 		if  5 < loot_num and loot_num < 15:
 			var oil = oil_scene.instantiate() as Node2D
 			oil.position = enemy.global_position

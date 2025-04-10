@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/GameManager.gd"
 BgMusic="*res://Scenes/bg_music.tscn"
+WaveManager="*res://Scripts/WaveManager.gd"
 
 [input]
 

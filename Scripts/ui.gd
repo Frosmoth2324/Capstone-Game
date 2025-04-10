@@ -13,7 +13,7 @@ func _ready():
 	health_number.text = str(GameManager.MAX_HEALTH)
 
 func _process(_delta):
-	wave_label.text = "Wave: " + str(GameManager.wave)
+	wave_label.text = "Wave: " + str(WaveManager.wave)
 	oil_bar.value = GameManager.oil
 	health_bar.value = GameManager.health
 	oil_number.text = str(int(GameManager.oil))

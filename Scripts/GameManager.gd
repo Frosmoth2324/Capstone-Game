@@ -10,11 +10,6 @@ var dead = false
 #pick-up stats
 var oil_can = 10
 
-#level stats
-var wave: int = 1
-var enemies_remaining: int = 0
-signal new_wave()
-
 #cone
 var can_cone = true
 var is_coneing = false
@@ -31,10 +26,6 @@ var pulse_cost = 30
 var pulse_damage = 10
 
 func _process(_delta):
-	if enemies_remaining == 0:
-		wave += 1
-		new_wave.emit()
-		
 	if oil < 0:
 		dead = true
 	if dead == true and oil != -1000:
