@@ -158,16 +158,19 @@ max_polyphony = 50
 [node name="ConeTimer" type="Timer" parent="."]
 wait_time = 0.3
 
-[node name="ConeLight" type="PointLight2D" parent="."]
+[node name="Cone" type="Node2D" parent="."]
+rotation = -1.5708
+
+[node name="ConeLight" type="PointLight2D" parent="Cone"]
 position = Vector2(0, 600)
 scale = Vector2(6, 24)
 color = Color(1, 0.6, 0.4, 1)
 shadow_enabled = true
 texture = ExtResource("5_7nsk8")
 
-[node name="Area2D" type="Area2D" parent="ConeLight"]
+[node name="Area2D" type="Area2D" parent="Cone/ConeLight"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ConeLight/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cone/ConeLight/Area2D"]
 polygon = PackedVector2Array(0.166667, -25.0417, -24.6667, 25, 24.5, 25)
 
 [connection signal="lantern_pulse" from="." to="." method="_on_lantern_pulse"]

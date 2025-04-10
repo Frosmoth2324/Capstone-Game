@@ -6,8 +6,10 @@ extends CharacterBody2D
 @onready var oil_timer = $OilTimer
 @onready var animation_player = $AnimationPlayer
 @onready var hit_sound = $HitSound
-@onready var cone_light = $ConeLight
+@onready var cone_light = $Cone/ConeLight
 @onready var cone_timer = $ConeTimer
+@onready var cone_area = $Cone/ConeLight/Area2D
+@onready var cone = $Cone
 
 
 const SPEED = 12500
@@ -37,18 +39,29 @@ func _process(_delta):
 		lantern_pulse.emit(player.global_position)
 
 func handle_cone():
+	#handle rotation
+	var mouse_pos = get_global_mouse_position()
+	var direction = (mouse_pos - global_position).normalized()
+	cone.rotation = direction.angle() - deg_to_rad(90)
+	#stop cone if you run out of fuel
 	if GameManager.can_cone == false:
-		GameManager.is_coneing == false
+		GameManager.is_coneing = false
+		GameManager.is_cone_boosting = false
+	#toggle cone
 	if Input.is_action_just_pressed("Cone"):
 		if GameManager.is_coneing:
 			GameManager.is_coneing = false
 		else:
 			if GameManager.can_cone:
 				GameManager.is_coneing = true
-	cone_light.enabled = GameManager.is_coneing
+	#start payment timer
 	if GameManager.is_coneing and cone_timer.is_stopped():
 		cone_timer.start()
+	#make cone turn on
 	GameManager.is_cone_boosting = (GameManager.is_coneing and Input.is_action_pressed("Cone Boost", true))
+	cone_light.enabled = GameManager.is_coneing
+	cone_area.monitoring = GameManager.is_coneing
+	#make the cone colour change if boosted
 	if GameManager.is_coneing and !GameManager.is_cone_boosting:
 		cone_light.color = Color(1.0, 0.5, 0.0, 1.0)
 	elif GameManager.is_coneing and GameManager.is_cone_boosting:
@@ -90,3 +103,11 @@ func _on_cone_timer_timeout():
 		GameManager.oil -= GameManager.cone_boost_cost
 	elif GameManager.is_coneing and !GameManager.is_cone_boosting:
 		GameManager.oil -= GameManager.cone_cost
+	if GameManager.is_coneing and !GameManager.is_cone_boosting:
+		for body in cone_area.get_overlapping_bodies():
+			if body.has_method("hit") and !body.has_method("is_player"):
+				body.hit(GameManager.cone_damage)
+	elif GameManager.is_coneing and GameManager.is_cone_boosting:
+		for body in cone_area.get_overlapping_bodies():
+			if body.has_method("hit") and !body.has_method("is_player"):
+				body.hit(GameManager.cone_boost_damage)
