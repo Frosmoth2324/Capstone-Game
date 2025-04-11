@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bi0veih7vkgj2" path="res://Assets/Sprites/Dungeon_brick_wall_grey.png.png" id="1_xjmqx"]
 [ext_resource type="PackedScene" uid="uid://l3sbtgxku847" path="res://Scenes/ui.tscn" id="3_juxmo"]
 [ext_resource type="PackedScene" uid="uid://clkp8fyws0hxj" path="res://Scenes/oil.tscn" id="4_tt366"]
-[ext_resource type="PackedScene" uid="uid://cg3nd41s213fe" path="res://Scenes/enemy.tscn" id="5_bnj4o"]
+[ext_resource type="Script" path="res://Scripts/WaveManager.gd" id="6_ct2bb"]
 
 [node name="Level" type="Node2D"]
 
@@ -34,5 +34,5 @@ position = Vector2(402, 324)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("5_bnj4o")]
-position = Vector2(648, 24)
+[node name="WaveManager" type="Node" parent="."]
+script = ExtResource("6_ct2bb")

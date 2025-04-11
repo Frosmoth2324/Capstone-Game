@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = %Player
+@onready var player: Node2D
 @onready var sprite = $Sprite
 @onready var enemy = $"."
 @onready var enemies = $".."
@@ -13,28 +13,25 @@ var loot_num: int
 
 var oil_scene = preload("res://Scenes/oil.tscn")
 
-func _ready():
-	loot_num = randi_range(0,100)
-	WaveManager.enemies_remaining += 1
-
-func _physics_process(delta):
-		var direction = (player.global_position - global_position).normalized()
-		if direction.x > 0:
-			sprite.flip_h = false
-		elif direction.x < 0:
-			sprite.flip_h = true
-		direction = direction.rotated(randf_range(-0.1, 0.1)) * (1.0 + randf_range(-0.1, 0.1))
-		velocity = direction * SPEED
-		if health > 0:
-			move_and_slide()
+func _physics_process(_delta):
+	var direction = Vector2(player.global_position - global_position).normalized()
+	if direction.x > 0:
+		sprite.flip_h = false
+	elif direction.x < 0:
+		sprite.flip_h = true
+	direction = direction.rotated(randf_range(-0.1, 0.1)) * (1.0 + randf_range(-0.1, 0.1))
+	velocity = direction * SPEED
+	if health > 0:
+		move_and_slide()
 
 func hit(hurt):
 	health -= hurt
 	print("enemy hit")
 	if health <= 0:
+		var loot_num = randi_range(0,100)
 		print("die")
 		print(loot_num)
-		WaveManager.enemies_remaining -= 1
+		GameManager.enemies_remaining -= 1
 		if  5 < loot_num and loot_num < 15:
 			var oil = oil_scene.instantiate() as Node2D
 			oil.position = enemy.global_position

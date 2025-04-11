@@ -65,7 +65,6 @@ func handle_cone():
 	if GameManager.is_coneing and !GameManager.is_cone_boosting:
 		cone_light.color = Color(1.0, 0.5, 0.0, 1.0)
 	elif GameManager.is_coneing and GameManager.is_cone_boosting:
-		print("boost")
 		cone_light.color = Color(1.0, .8, 0.4, 1.0)
 
 func set_sprite_direction(direction):

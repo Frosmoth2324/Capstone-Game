@@ -7,6 +7,11 @@ const MAX_HEALTH = 100
 var health = MAX_HEALTH
 var dead = false
 
+#wave stats
+var wave: int = 1
+var enemies_remaining: int = 0
+signal start_wave(wave: int)
+
 #pick-up stats
 var oil_can = 10
 
@@ -39,3 +44,7 @@ func _process(_delta):
 		can_cone = false
 	else:
 		can_cone = true
+
+func next_wave():
+	wave += 1
+	start_wave.emit(wave)
