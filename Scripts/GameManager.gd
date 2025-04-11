@@ -8,12 +8,13 @@ var health = MAX_HEALTH
 var dead = false
 
 #wave stats
-var wave: int = 1
+var wave: int = 0
 var enemies_remaining: int = 0
+var is_in_wave = true
 signal start_wave(wave: int)
 
 #pick-up stats
-var oil_can = 10
+var oil_can = 25
 
 #cone
 var can_cone = true

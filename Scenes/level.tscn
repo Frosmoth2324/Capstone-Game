@@ -36,3 +36,9 @@ position = Vector2(402, 324)
 
 [node name="WaveManager" type="Node" parent="."]
 script = ExtResource("6_ct2bb")
+
+[node name="CalmTimer" type="Timer" parent="WaveManager"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="WaveManager/CalmTimer" to="WaveManager" method="_on_calm_timer_timeout"]

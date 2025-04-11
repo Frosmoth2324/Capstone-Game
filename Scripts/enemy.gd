@@ -26,13 +26,11 @@ func _physics_process(_delta):
 
 func hit(hurt):
 	health -= hurt
-	print("enemy hit")
 	if health <= 0:
 		var loot_num = randi_range(0,100)
-		print("die")
-		print(loot_num)
+		print("die: " + str(loot_num))
 		GameManager.enemies_remaining -= 1
-		if  5 < loot_num and loot_num < 15:
+		if  0 <= loot_num and loot_num <= 20:
 			var oil = oil_scene.instantiate() as Node2D
 			oil.position = enemy.global_position
 			oils.add_child(oil)

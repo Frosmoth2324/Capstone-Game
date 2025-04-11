@@ -78,7 +78,7 @@ func set_sprite_direction(direction):
 		sprite_2d.play("up")
 
 func _on_oil_timer_timeout():
-	if GameManager.oil > 0:
+	if GameManager.oil > 0 and GameManager.is_in_wave:
 		GameManager.oil -= 1
 		oil_timer.start()
 	elif GameManager.oil == 0:
@@ -99,9 +99,11 @@ func _on_lantern_pulse(pos):
 
 func _on_cone_timer_timeout():
 	if GameManager.is_cone_boosting:
-		GameManager.oil -= GameManager.cone_boost_cost
+		if GameManager.is_in_wave:
+			GameManager.oil -= GameManager.cone_boost_cost
 	elif GameManager.is_coneing and !GameManager.is_cone_boosting:
-		GameManager.oil -= GameManager.cone_cost
+		if GameManager.is_in_wave:
+			GameManager.oil -= GameManager.cone_cost
 	if GameManager.is_coneing and !GameManager.is_cone_boosting:
 		for body in cone_area.get_overlapping_bodies():
 			if body.has_method("hit") and !body.has_method("is_player"):
