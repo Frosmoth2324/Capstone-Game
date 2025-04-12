@@ -15,6 +15,7 @@ signal start_wave(wave: int)
 
 #pick-up stats
 var oil_can = 25
+var heart = 15
 
 #cone
 var can_cone = true

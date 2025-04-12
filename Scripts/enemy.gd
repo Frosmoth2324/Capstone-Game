@@ -5,13 +5,15 @@ extends CharacterBody2D
 @onready var enemy = $"."
 @onready var enemies = $".."
 @onready var oils = $"../../Oils"
+@onready var hearts = $"../../Hearts"
+
 
 var SPEED = 100
 var health = 10
 var damage = 10
-var loot_num: int
 
 var oil_scene = preload("res://Scenes/oil.tscn")
+var heart_scene = preload("res://Scenes/heart.tscn")
 
 func _physics_process(_delta):
 	var direction = Vector2(player.global_position - global_position).normalized()
@@ -34,6 +36,10 @@ func hit(hurt):
 			var oil = oil_scene.instantiate() as Node2D
 			oil.position = enemy.global_position
 			oils.add_child(oil)
+		elif 20 < loot_num and loot_num <= 40:
+			var heart = heart_scene.instantiate() as Node2D
+			heart.position = enemy.global_position
+			hearts.add_child(heart)
 		queue_free()
 		
 func _on_area_2d_body_entered(body):
