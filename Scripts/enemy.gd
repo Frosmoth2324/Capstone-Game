@@ -32,11 +32,11 @@ func hit(hurt):
 		var loot_num = randi_range(0,100)
 		print("die: " + str(loot_num))
 		GameManager.enemies_remaining -= 1
-		if  0 <= loot_num and loot_num <= 20:
+		if  0 <= loot_num and loot_num <= 15:
 			var oil = oil_scene.instantiate() as Node2D
 			oil.position = enemy.global_position
 			oils.add_child(oil)
-		elif 20 < loot_num and loot_num <= 40:
+		elif 15 < loot_num and loot_num <= 25:
 			var heart = heart_scene.instantiate() as Node2D
 			heart.position = enemy.global_position
 			hearts.add_child(heart)
