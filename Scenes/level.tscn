@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://crvr4t64khjk6"]
+[gd_scene load_steps=5 format=3 uid="uid://crvr4t64khjk6"]
 
 [ext_resource type="PackedScene" uid="uid://c6u6lt7xce26a" path="res://Scenes/player.tscn" id="1_frw4y"]
 [ext_resource type="Texture2D" uid="uid://bi0veih7vkgj2" path="res://Assets/Sprites/Dungeon_brick_wall_grey.png.png" id="1_xjmqx"]
 [ext_resource type="PackedScene" uid="uid://l3sbtgxku847" path="res://Scenes/ui.tscn" id="3_juxmo"]
-[ext_resource type="PackedScene" uid="uid://clkp8fyws0hxj" path="res://Scenes/oil.tscn" id="4_tt366"]
-[ext_resource type="PackedScene" uid="uid://k0rlju4na2da" path="res://Scenes/heart.tscn" id="5_2jbwq"]
 [ext_resource type="Script" path="res://Scripts/WaveManager.gd" id="6_ct2bb"]
 
 [node name="Level" type="Node2D"]
@@ -30,13 +28,7 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Oils" type="Node" parent="."]
 
-[node name="Oil" parent="Oils" instance=ExtResource("4_tt366")]
-position = Vector2(402, 324)
-
 [node name="Hearts" type="Node" parent="."]
-
-[node name="heart" parent="Hearts" instance=ExtResource("5_2jbwq")]
-position = Vector2(397, 570)
 
 [node name="Enemies" type="Node" parent="."]
 
