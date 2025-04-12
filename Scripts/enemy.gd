@@ -21,7 +21,7 @@ func _physics_process(_delta):
 		sprite.flip_h = false
 	elif direction.x < 0:
 		sprite.flip_h = true
-	direction = direction.rotated(randf_range(-0.1, 0.1)) * (1.0 + randf_range(-0.1, 0.1))
+	direction = direction.rotated(randf_range(-0.2, 0.2)) * (1.0 + randf_range(-0.2, 0.2))
 	velocity = direction * SPEED
 	if health > 0:
 		move_and_slide()

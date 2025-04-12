@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://tx38qhu2bbm0"]
+
+[ext_resource type="Script" path="res://Scripts/start.gd" id="1_7ud7n"]
+[ext_resource type="FontFile" uid="uid://dui4y5a6nm4m8" path="res://Assets/Fonts/BLKCHCRY.TTF" id="1_dvirr"]
+[ext_resource type="AudioStream" uid="uid://c5q5irligprqo" path="res://Assets/Sounds/start_game.mp3" id="3_o08ni"]
+
+[sub_resource type="Animation" id="Animation_uc1mw"]
+resource_name = "flicker"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.733333, 1.3, 1.7, 2.26667, 2.63333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.481), Color(1, 1, 1, 0.757), Color(1, 1, 1, 0.93), Color(1, 1, 1, 0.703), Color(1, 1, 1, 0.449), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ahjdo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fpgg5"]
+_data = {
+"RESET": SubResource("Animation_ahjdo"),
+"flicker": SubResource("Animation_uc1mw")
+}
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7ud7n")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 571.0
+offset_top = 527.0
+offset_right = 611.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dvirr")
+theme_override_font_sizes/font_size = 40
+text = "Press [Space] To Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+libraries = {
+"": SubResource("AnimationLibrary_fpgg5")
+}
+
+[node name="StartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o08ni")
+volume_db = 10.0

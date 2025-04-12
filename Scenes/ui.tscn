@@ -34,6 +34,12 @@ theme_override_fonts/font = ExtResource("2_ikr5m")
 theme_override_font_sizes/font_size = 32
 text = "Wave:"
 
+[node name="WaveProgLabel" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ikr5m")
+theme_override_font_sizes/font_size = 32
+text = "Enemies Left:"
+
 [node name="Health" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
 
