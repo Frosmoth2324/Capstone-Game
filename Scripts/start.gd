@@ -1,25 +1,27 @@
 extends Control
 
-@onready var label = $Node2D/F
+@onready var f = $Node2D/F
 @onready var animation_player = $AnimationPlayer
 @onready var start_sound = $StartSound
 var flickertime1 = 0.0
 var flickertime2 = 0.0
+@onready var flickering_light: AudioStreamPlayer2D = $FlickeringLight
+@onready var a: Label = $Node2D/A
+@onready var l: Label = $Node2D/L
+@onready var l_2: Label = $Node2D/L2
+@onready var e: Label = $Node2D/E
+@onready var n: Label = $Node2D/N
 
 func _ready():
-	#label.modulate.a = 0.0
-	#var tween = create_tween()
-	#tween.tween_property(label, "modulate:a", 1.0, 2.0).set_trans(Tween.TRANS_SINE)
-	#animation_player.play("flicker")
-	for i in 5:
+	flickering_light.play()
+	for i in 20:
 		flickertime1 = randf_range(0.05,0.3)
 		flickertime2 = randf_range(0.1,0.5)
-		print(flickertime1)
-		print(flickertime2)
-		label.hide()
+		f.hide()
 		await get_tree().create_timer(flickertime1).timeout
-		label.show()
+		f.show()
 		await get_tree().create_timer(flickertime2).timeout
+	
 	
 func _process(_delta):
 	pass
@@ -28,5 +30,4 @@ func _process(_delta):
 
 func _on_start_button_pressed() -> void:
 	start_sound.play()
-	#await get_tree().create_timer(.5).timeout
-	get_tree().change_scene_to_file("res://Scenes/level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/intro_cutscene.tscn")
