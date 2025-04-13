@@ -14,7 +14,7 @@ var is_in_wave = true
 signal start_wave(wave: int)
 
 #pick-up stats
-var oil_can = 25
+var oil_can = 30
 var heart = 15
 
 #cone

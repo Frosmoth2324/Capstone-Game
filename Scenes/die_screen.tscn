@@ -130,7 +130,7 @@ offset_bottom = -0.0400085
 theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("3_b14qf")
 theme_override_font_sizes/font_size = 40
-text = "Press [Space] To Restart"
+text = "Press [Enter] To Restart"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

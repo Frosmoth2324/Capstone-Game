@@ -11,7 +11,7 @@ func _ready():
 	animation_player.play("flicker")
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Pulse"):
+	if Input.is_action_just_pressed("Start"):
 		start_sound.play()
 		await get_tree().create_timer(.5).timeout
 		get_tree().change_scene_to_file("res://Scenes/level.tscn")
