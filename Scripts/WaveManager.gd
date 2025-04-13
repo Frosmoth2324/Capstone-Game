@@ -11,7 +11,7 @@ func _ready():
 	GameManager.next_wave()
 
 func _process(_delta):
-	if GameManager.enemies_remaining == 0 and calm_timer.is_stopped():
+	if GameManager.enemies_remaining <= 0 and calm_timer.is_stopped():
 		GameManager.is_in_wave = false
 		calm_timer.start()
 
