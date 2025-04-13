@@ -151,6 +151,7 @@ horizontal_alignment = 1
 
 [node name="credit" type="Label" parent="."]
 self_modulate = Color(0.666667, 0.901961, 0.635294, 1)
+layout_mode = 0
 offset_left = 208.0
 offset_top = 382.0
 offset_right = 955.0
@@ -163,6 +164,7 @@ horizontal_alignment = 1
 
 [node name="tagline" type="Label" parent="."]
 self_modulate = Color(0.81021, 0.787023, 0.0942396, 1)
+layout_mode = 0
 offset_left = 201.0
 offset_top = 78.0
 offset_right = 951.0

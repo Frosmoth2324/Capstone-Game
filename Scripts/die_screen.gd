@@ -9,7 +9,7 @@ var flickertime2 = 0.0
 @onready var wave_label: Label = $WaveLabel
 
 func _ready():
-	flicker_enemies()
+	death_screen()
 	
 
 func _process(_delta):
@@ -26,23 +26,6 @@ func init():
 	GameManager.wave = 0
 	GameManager.enemies_remaining = 0
 	GameManager.is_in_wave = true
-
-func flicker_enemies():
-	for i in 5:
-		enemy_1.position = Vector2(randf_range(100,900),randf_range(50,500))
-		enemy_1.scale = Vector2(float(i)*0.75,float(i)*0.75)
-		flickertime1 = randf_range(0.3,0.5)
-		flickertime2 = randf_range(0.5,1)
-		enemy_1.show()
-		await get_tree().create_timer(flickertime1).timeout
-		enemy_1.hide()
-		await get_tree().create_timer(flickertime2).timeout
-	enemy_1.position = Vector2(500,200)
-	enemy_1.scale = Vector2(6,6)
-	enemy_1.show()
-	await get_tree().create_timer(3).timeout
-	enemy_1.hide()
-	death_screen()
 
 func death_screen():
 	animation_player.play("die_message_fade_in")
