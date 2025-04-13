@@ -9,7 +9,7 @@ func _ready():
 		print("Wave: " + str(GameManager.wave))
 
 func _process(_delta):
-	if Input.is_action_just_pressed("Start"):
+	if Input.is_action_just_pressed("Pulse"):
 		start_sound.play()
 		await get_tree().create_timer(.5).timeout
 		GameManager.oil = GameManager.MAX_OIL

@@ -62,7 +62,7 @@ offset_right = 793.0
 offset_bottom = 559.0
 theme_override_fonts/font = ExtResource("1_dvirr")
 theme_override_font_sizes/font_size = 40
-text = "Press [Enter] To Start"
+text = "Press [Space] To Start"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Label")
