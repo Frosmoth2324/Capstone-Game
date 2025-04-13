@@ -1,7 +1,7 @@
 extends Control
 
 @onready var animation_player = $AnimationPlayer
-@onready var restart_label = $RestartLabel
+@onready var restart_label = $Label/RestartLabel
 @onready var start_sound = $StartSound
 
 func _ready():
