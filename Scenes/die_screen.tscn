@@ -34,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label/RestartLabel:theme_override_colors/font_color")
+tracks/2/path = NodePath("RestartLabel:theme_override_colors/font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -74,7 +74,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label/RestartLabel:theme_override_colors/font_color")
+tracks/2/path = NodePath("RestartLabel:theme_override_colors/font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -117,25 +117,23 @@ theme_override_fonts/font = ExtResource("1_vx21y")
 theme_override_font_sizes/font_size = 184
 text = "You Died!"
 
-[node name="RestartLabel" type="Label" parent="Label"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.612
-anchor_right = 1.134
-anchor_bottom = 1.912
-offset_left = -17.0
-offset_top = -0.0400085
-offset_right = 0.0999756
-offset_bottom = -0.0400085
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_fonts/font = ExtResource("3_b14qf")
-theme_override_font_sizes/font_size = 40
-text = "Press [Space] To Restart"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5cu1w")
 }
+
+[node name="RestartLabel" type="Label" parent="."]
+offset_left = 571.0
+offset_top = 527.0
+offset_right = 611.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_b14qf")
+theme_override_font_sizes/font_size = 40
+text = "Press [Space] To Restart"
+metadata/_edit_use_anchors_ = true
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3lgxu")
