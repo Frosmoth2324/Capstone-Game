@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		walking.pause()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body):
 	walking.hide()
 	falling.show()
 	falling.play()
