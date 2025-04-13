@@ -2,7 +2,6 @@ extends Control
 @onready var camera_2d: Camera2D = $Player/Camera2D
 @onready var point_light_2d_2: PointLight2D = $PointLight2D2
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var fallen: Node2D = $CanvasLayer/FALLEN
 
 
 

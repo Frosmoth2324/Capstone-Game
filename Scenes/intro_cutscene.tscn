@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis(\"Left\", \"Right\")
-	if direction:
+	if direction == 1:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -56,9 +56,6 @@ func _physics_process(delta: float) -> void:
 	if direction > 0:
 		walking.play()
 		walking.flip_h = false
-	elif direction <0:
-		walking.flip_h = true
-		walking.play()
 	else:
 		walking.pause()
 
@@ -161,7 +158,7 @@ texture = ExtResource("1_3757c")
 region_enabled = true
 region_rect = Rect2(-90723.5, -56848.7, 169198, 96920.4)
 
-[node name="Background" type="StaticBody2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite2D3" type="Sprite2D" parent="Background"]
 position = Vector2(747, 43)
@@ -178,7 +175,7 @@ position = Vector2(-1168, 47)
 scale = Vector2(0.595596, 0.582222)
 texture = ExtResource("3_1itav")
 
-[node name="DungeonFloor" type="StaticBody2D" parent="."]
+[node name="DungeonFloor" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="DungeonFloor"]
 self_modulate = Color(0, 0, 0, 1)
