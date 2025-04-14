@@ -6,14 +6,8 @@ extends Control
 
 
 
-<<<<<<< Updated upstream
 func _process(delta: float) -> void:
 	if camera_2d.get_screen_center_position() == Vector2(320,1480):
-=======
-
-func _process(_delta):
-	if player.position.y >= 250:
->>>>>>> Stashed changes
 		await get_tree().create_timer(1).timeout
 		point_light_2d.visible = false
 		get_tree().change_scene_to_file("res://Scenes/intro_cutscene_2.tscn")
