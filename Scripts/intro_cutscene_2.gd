@@ -11,7 +11,7 @@ func _ready():
 	fallen.hide()
 	await get_tree().create_timer(1).timeout
 	flickering_light.play()
-	for i in 7:
+	for i in 12:
 		oil.position = Vector2(randf_range(100,1048),randf_range(50,500))
 		oil.rotation_degrees = randf_range(0,360)
 		flickertime1 = randf_range(0.05,0.25)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://l3sbtgxku847"]
+[gd_scene load_steps=8 format=3 uid="uid://l3sbtgxku847"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_v6tqu"]
 [ext_resource type="Texture2D" uid="uid://se8g2ptfsvym" path="res://icon.svg" id="2_32l27"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d02ocjbjgift3" path="res://Assets/Sprites/oil_progress.png" id="3_amtcq"]
 [ext_resource type="Texture2D" uid="uid://biaos0qt8fum7" path="res://Assets/Sprites/heart.png" id="4_puw16"]
 [ext_resource type="Texture2D" uid="uid://cahir0xigdglw" path="res://Assets/Sprites/health_progress.png" id="5_nj8n0"]
+[ext_resource type="FontFile" uid="uid://dui4y5a6nm4m8" path="res://Assets/Fonts/BLKCHCRY.TTF" id="7_bi0sh"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_v6tqu")
@@ -78,3 +79,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ikr5m")
 theme_override_font_sizes/font_size = 16
 text = "15"
+
+[node name="Instructions" type="Label" parent="UI"]
+offset_left = 371.333
+offset_top = 10.6667
+offset_right = 737.333
+offset_bottom = 94.6667
+theme_override_fonts/font = ExtResource("7_bi0sh")
+theme_override_font_sizes/font_size = 20
+text = "left click to conelight kill (-0.5 oil)
+right click to boost conelight kill (-1 oil)
+space to kill all visible  (-30 oil)
+"
+horizontal_alignment = 2
